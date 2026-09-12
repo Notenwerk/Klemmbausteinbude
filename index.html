@@ -87,16 +87,22 @@ body{background:#d7a86e;background-image:radial-gradient(circle at 12% 18%,rgba(
 <script>
 const ADMIN_PASSWORD = "admin"; let isAdmin = false; let editingSetId = null;
 let sets = JSON.parse(localStorage.getItem('klemmbausteinSets')) || [];
-fetch('sets.json')
-  .then(response => response.json())
-  .then(data => {
-    if (sets.length === 0 && Array.isArray(data)) {
-      sets = data;
+fetch('https://notenwerk.github.io/Klemmbausteinbude/sets.json', {cache: 'no-store'})
+  .then(response => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(payload => {
+    const imported = validateBackupPayload(payload);
+    if (!imported || imported.length === 0) return;
+    const merged = mergeBackupSets(sets, imported);
+    if (merged.length !== sets.length) {
+      sets = merged;
       localStorage.setItem('klemmbausteinSets', JSON.stringify(sets));
       renderSets();
     }
   })
-  .catch(error => console.error('Fehler beim Laden der Sets:', error));
+  .catch(error => console.warn('Öffentliche Sets konnten nicht geladen werden:', error));
 const container = document.getElementById('setsContainer'); const modal = document.getElementById('setModal'); const addSetBtn = document.getElementById('addSetBtn'); const backupPanel = document.getElementById('backupPanel');
 const sortBy = document.getElementById('sortBy'); const sortDirection = document.getElementById('sortDirection');
 const SORT_STORAGE_KEY = 'klemmbausteinSortierung'; const difficultyRank = {green:1, yellow:2, red:3};
