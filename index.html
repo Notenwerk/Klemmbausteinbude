@@ -59,12 +59,6 @@ body{background:#d7a86e;background-image:radial-gradient(circle at 12% 18%,rgba(
 @media(max-width:760px){.poster-header{min-height:500px}.poster-main{display:block}.brand-plate{margin:auto;padding:15px 13px}.brand-plate h1{font-size:clamp(1.65rem,9.2vw,3.7rem);text-align:center}.bubble{margin:30px auto 0}.action-trail{margin-top:48px;flex-wrap:wrap;gap:12px}.trail-dot{display:none}.action-badge{padding:9px 13px}}
 @media(max-width:420px){.poster-header{padding:30px 14px}.action-badge{flex:1;justify-content:center;min-width:112px}.brand-plate h1{letter-spacing:-.09em}}
 </style>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1565C0">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Klemmbausteinbude">
 </head>
 <body>
 <main class="page-shell">
@@ -83,7 +77,7 @@ body{background:#d7a86e;background-image:radial-gradient(circle at 12% 18%,rgba(
   </div>
 </header>
 <div class="toolbar"><p class="section-label">Bauanleitungen</p><button id="addSetBtn" class="add-set-btn" onclick="openModal()">＋ Neues Set hinzufügen</button></div>
-<section class="backup-panel" id="backupPanel" aria-labelledby="backup-title"><h2 class="backup-heading" id="backup-title">🧰 Datensicherung</h2><p class="backup-copy">Sichere deine Sets als Datei oder hole sie später wieder zurück. Deine Daten liegen nur lokal in diesem Browser.</p><div class="backup-actions"><button type="button" class="backup-export" onclick="exportSets()">⬇ Sets exportieren / sichern</button><button type="button" class="backup-import" onclick="document.getElementById('backupFile').click()">⬆ Sets wiederherstellen / importieren</button><input class="backup-file" id="backupFile" type="file" accept=".json,application/json" onchange="importSets(event)"></div></section>
+<section class="backup-panel" id="backupPanel" aria-labelledby="backup-title"><h2 class="backup-heading" id="backup-title">🧰 Datensicherung</h2><p class="backup-copy">Sichere deine Sets als JSON-Backup oder als CSV für Tabellenprogramme. Deine Daten liegen nur lokal in diesem Browser.</p><div class="backup-actions"><button type="button" class="backup-export" onclick="exportSets()">⬇ JSON-Backup exportieren</button><button type="button" class="backup-import" onclick="document.getElementById('backupFile').click()">⬆ JSON-Backup importieren</button><button type="button" class="backup-export" onclick="exportSetsCsv()">⬇ Sets als CSV exportieren</button><button type="button" class="backup-import" onclick="document.getElementById('csvFile').click()">⬆ Sets aus CSV importieren</button><input class="backup-file" id="backupFile" type="file" accept=".json,application/json" onchange="importSets(event)"><input class="backup-file" id="csvFile" type="file" accept=".csv,text/csv" onchange="importSetsCsv(event)"></div></section>
 <div class="sort-toolbar" aria-label="Sortierung der Bauanleitungen"><label for="sortBy">Sortieren nach:</label><select id="sortBy" aria-label="Sortierkriterium"><option value="name">Name (A–Z)</option><option value="brand">Hersteller/Marke (A–Z)</option><option value="difficulty">Schwierigkeitsgrad</option></select><button type="button" class="sort-direction" id="sortDirection" onclick="toggleSortDirection()" aria-label="Sortierreihenfolge umschalten" title="Aufsteigend/absteigend">↑</button></div>
 <section class="container" id="setsContainer" aria-label="Gespeicherte Bauanleitungen"></section>
 </main>
@@ -93,6 +87,16 @@ body{background:#d7a86e;background-image:radial-gradient(circle at 12% 18%,rgba(
 <script>
 const ADMIN_PASSWORD = "admin"; let isAdmin = false; let editingSetId = null;
 let sets = JSON.parse(localStorage.getItem('klemmbausteinSets')) || [];
+fetch('sets.json')
+  .then(response => response.json())
+  .then(data => {
+    if (sets.length === 0 && Array.isArray(data)) {
+      sets = data;
+      localStorage.setItem('klemmbausteinSets', JSON.stringify(sets));
+      renderSets();
+    }
+  })
+  .catch(error => console.error('Fehler beim Laden der Sets:', error));
 const container = document.getElementById('setsContainer'); const modal = document.getElementById('setModal'); const addSetBtn = document.getElementById('addSetBtn'); const backupPanel = document.getElementById('backupPanel');
 const sortBy = document.getElementById('sortBy'); const sortDirection = document.getElementById('sortDirection');
 const SORT_STORAGE_KEY = 'klemmbausteinSortierung'; const difficultyRank = {green:1, yellow:2, red:3};
@@ -157,19 +161,34 @@ function importSets(event){
   const file=event.target.files&&event.target.files[0]; if(!file)return;
   const reader=new FileReader(); reader.onload=()=>{try{const imported=validateBackupPayload(JSON.parse(reader.result));if(!imported)throw new Error('invalid');const replace=confirm('Backup erkannt. OK = bestehende Sets ersetzen, Abbrechen = Sets zusammenführen.');sets=replace?imported:mergeBackupSets(sets,imported);localStorage.setItem('klemmbausteinSets',JSON.stringify(sets));renderSets();alert(replace?'Sets wurden wiederhergestellt.':'Sets wurden zusammengeführt.')}catch(error){alert('Diese Datei konnte nicht gelesen werden. Bitte wähle ein gültiges Klemmbausteinbude-Backup. Deine bisherigen Sets bleiben erhalten.')}finally{event.target.value=''}}; reader.onerror=()=>{event.target.value='';alert('Die Datei konnte nicht gelesen werden. Deine bisherigen Sets bleiben erhalten.')}; reader.readAsText(file);
 }
+function csvEscape(value){const text=String(value??'');return /[",\n\r]/.test(text)?'"'+text.replace(/"/g,'""')+'"':text}
+function exportSetsCsv(){
+  const headers=['Set-Name','Hersteller','Link zum Bild','Link zur PDF','Steineanzahl'];
+  const rows=sets.map(set=>[set.name,set.brand,set.image,set.pdf,set.parts]);
+  const csv='\ufeff'+[headers,...rows].map(row=>row.map(csvEscape).join(',')).join('\r\n')+'\r\n';
+  const date=new Date().toISOString().slice(0,10); const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}); const link=document.createElement('a'); link.href=URL.createObjectURL(blob); link.download=`klemmbausteinbude-sets-${date}.csv`; link.click(); setTimeout(()=>URL.revokeObjectURL(link.href),0);
+}
+function parseCsv(text){
+  const rows=[]; let row=[], cell='', quoted=false;
+  text=text.replace(/^\ufeff/,'');
+  for(let i=0;i<text.length;i++){const ch=text[i], next=text[i+1];if(quoted){if(ch==='"'&&next==='"'){cell+='"';i++}else if(ch==='"')quoted=false;else cell+=ch}else if(ch==='"'&&cell===''){quoted=true}else if(ch===','){row.push(cell);cell=''}else if(ch==='\n'||ch==='\r'){if(ch==='\r'&&next==='\n')i++;row.push(cell);if(row.some(value=>value.trim()!==''))rows.push(row);row=[];cell=''}else cell+=ch}
+  if(cell!==''||row.length){row.push(cell);if(row.some(value=>value.trim()!==''))rows.push(row)}
+  return rows;
+}
+function validateCsvPayload(text){
+  const rows=parseCsv(text); const expected=['Set-Name','Hersteller','Link zum Bild','Link zur PDF','Steineanzahl'];
+  if(rows.length<1||rows[0].map(v=>v.trim()).join('\u0000')!==expected.join('\u0000')||rows.length>10001)return null;
+  const imported=rows.slice(1).map(row=>{if(row.length!==5||!row[0].trim()||!row[1].trim()||!row[2].trim())return null;const parts=Number(row[4].trim()||0);if(!Number.isFinite(parts)||parts<0)return null;return{id:Date.now()+Math.random(),name:row[0].trim(),brand:row[1].trim(),image:row[2].trim(),pdf:row[3].trim(),parts:Math.floor(parts),difficulty:'green'}});
+  return imported.every(Boolean)?imported:null;
+}
+function importSetsCsv(event){
+  const file=event.target.files&&event.target.files[0]; if(!file)return;
+  const reader=new FileReader(); reader.onload=()=>{try{const imported=validateCsvPayload(reader.result);if(!imported)throw new Error('invalid');const replace=confirm('CSV erkannt. OK = bestehende Sets ersetzen, Abbrechen = Sets zusammenführen.');sets=replace?imported:mergeBackupSets(sets,imported);localStorage.setItem('klemmbausteinSets',JSON.stringify(sets));renderSets();alert(replace?'Sets wurden aus der CSV ersetzt.':'CSV-Sets wurden zusammengeführt.')}catch(error){alert('Diese CSV konnte nicht gelesen werden. Erwartet werden die Spalten: Set-Name, Hersteller, Link zum Bild, Link zur PDF, Steineanzahl. Deine bisherigen Sets bleiben erhalten.')}finally{event.target.value=''}}; reader.onerror=()=>{event.target.value='';alert('Die CSV-Datei konnte nicht gelesen werden. Deine bisherigen Sets bleiben erhalten.')}; reader.readAsText(file);
+}
 window.onclick=function(event){if(event.target==modal)closeModal();if(event.target===pdfPreviewModal)closePdfPreview()};document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(pdfPreviewModal.classList.contains('is-open'))closePdfPreview();else if(modal.style.display==='block')closeModal()}});renderSets();
 </script>
-
-<script>
-  // Service Worker relativ registrieren, damit auch /reponame/ auf GitHub Pages funktioniert.
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-      navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function (error) {
-        console.warn('Service Worker konnte nicht registriert werden:', error);
-      });
-    });
-  }
-</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>

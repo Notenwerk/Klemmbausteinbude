@@ -1,0 +1,278 @@
+{
+  "version": 1,
+  "exportedAt": "2026-09-12T17:53:51.936Z",
+  "sets": [
+    {
+      "id": 1789222088156,
+      "name": "Technic  Hydraulikbagger",
+      "brand": "Lego",
+      "image": "https://www.lego.com/cdn/product-assets/product.img.pri/42121_Prod.jpg?format=webply&fit=bounds&quality=75&width=500&height=500&dpr=1",
+      "pdf": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6359727.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789222202360,
+      "name": "Technic  Hydraulikbagger - Model B",
+      "brand": "LEGO",
+      "image": "https://www.lego.com/cdn/product-assets/product.bi.additional.extra.img/42121_01_Build_Alt.png?format=webply&fit=crop&quality=75&width=230&height=230&dpr=1",
+      "pdf": "https://www.lego.com/cdn/product-assets/product.bi.additional.extra.pdf/42121_01_Build_Alt.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789228434512,
+      "name": "Feuerwehr Parkhauslöschfahrzeug mit Autowrack",
+      "brand": "Bluebrixx",
+      "image": "https://www.bluebrixx.com/thumbnail/48/85/9f/1781656600/386294a6e9594eeb81312155b8f446cf_1920x1920.webp?ts=1783951277",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109532_parkhaus_l%C3%B6schfahrzeug.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789228508600,
+      "name": "Torhaus mit Mauern",
+      "brand": "Bluebrixx",
+      "image": "https://www.bluebrixx.com/thumbnail/74/39/64/1788184599/6c2a260bb7ef4c11a019be03bf650293_1400x1400.webp?ts=1788184599",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109663_Festung_Rabenstein_Torhaus_mit_Mauern.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789228545131,
+      "name": "Polizei Wasserwerfer",
+      "brand": "Bluebrixx",
+      "image": "https://www.bluebrixx.com/thumbnail/1a/7d/6b/1784608596/581bce77fe424141b978a459e0252f04_1400x1400.webp?ts=1784608597",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/110/110414_police_water_cannon_BI.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789230446821,
+      "name": "Große Zugmaschine",
+      "brand": "BlueBrixx",
+      "image": "https://www.bluebrixx.com/thumbnail/4c/77/1b/1787646968/98c372201ceb451d95e629d86c584570_1400x1400.webp?ts=1787646968",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/110/110013_107584_big_tractor_dark_green_final.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789230477807,
+      "name": "Highway Rettungswagen",
+      "brand": "BlueBrixx-Special",
+      "image": "https://www.bluebrixx.com/thumbnail/01/d9/01/1788786961/8e350c3114a8455ea4c492de44e3f343_1400x1400.webp?ts=1788786961",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/110/110066_us_ambulance_final.pdf",
+      "difficulty": "red"
+    },
+    {
+      "id": 1789230553372,
+      "name": "Pisa",
+      "brand": "BlueBrixx-Special",
+      "image": "https://www.bluebrixx.com/thumbnail/b1/93/02/1780387617/80d5aaecf56646be9dd562ba208bfaae_400x400.webp?ts=1783941158",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/105/105321%20Pisa.pdf",
+      "difficulty": "red"
+    },
+    {
+      "id": 1789230605594,
+      "name": "US Geldtransporter",
+      "brand": "BlueBrixx-Special",
+      "image": "https://www.bluebrixx.com/thumbnail/f7/c9/a2/1780387299/ccbb2ca1f3264a9f8afb5c8cb1df4cdc_400x400.webp?ts=1783938993",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/104/104374%20Geldtranspoter.pdf",
+      "difficulty": "red"
+    },
+    {
+      "id": 1789230645260,
+      "name": "Seagrave Tiller Ladder",
+      "brand": "BlueBrixx-Special",
+      "image": "https://www.bluebrixx.com/thumbnail/2e/ae/87/1780386081/647b18e64bc643b7ae7b21bb3248b0e8_400x400.webp?ts=1783932129",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/100/BB_Special_100865_Seagrave_Tiller_Ladder_rot_weiss_v3.pdf",
+      "difficulty": "red"
+    },
+    {
+      "id": 1789230703050,
+      "name": "Windrad",
+      "brand": "BlueBrixx",
+      "image": "https://www.bluebrixx.com/thumbnail/4c/74/85/1783059057/5204777ec3ed4202953139c7698d1207_400x400.webp?ts=1783950688",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109246_Windrad.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789230741200,
+      "name": "Schwanenküken",
+      "brand": "BlueBrixx-Pro",
+      "image": "https://www.bluebrixx.com/thumbnail/b1/78/d3/1784286382/69036b9d16184d80ad2ef00d427f5133_1400x1400.webp?ts=1784286382",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109087_Schwanenk%C3%BCken.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789230772175,
+      "name": "Blaumeise",
+      "brand": "BlueBrixx-Pro",
+      "image": "https://www.bluebrixx.com/thumbnail/c1/a1/79/1781700100/5ee0ea42d6af4a97b5323bf8e9541db4_1920x1920.webp?ts=1783950400",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109120_Blaumeise.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789230805219,
+      "name": "Deutscher Rettungswagen",
+      "brand": "Modbrix",
+      "image": "https://www.bluebrixx.com/thumbnail/a5/57/41/1783950693/56cc62be710f4022818fe6ffdc57d14b_1920x1920.webp?ts=1783950694",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109247_Deutscher_Rettungswagen.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789230850215,
+      "name": "Robotersoldat",
+      "brand": "Modbrix",
+      "image": "https://www.bluebrixx.com/thumbnail/e8/a1/8f/1780388492/2d54cca556494304bd8074e51b046ac6_1920x1920.webp?ts=1783950427",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109177_Robotersoldat.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789230879130,
+      "name": "Motorradtransporter",
+      "brand": "Modbrix",
+      "image": "https://www.bluebrixx.com/thumbnail/85/36/1a/1783950424/2321cc28faaa450f8ba7ddb0b4e71042_1920x1920.webp?ts=1783950424",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109165_Motorradtransporter.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789230917233,
+      "name": "Exzentrischer Wissenschaftler",
+      "brand": "Modbrix",
+      "image": "https://www.bluebrixx.com/thumbnail/fa/bd/44/1788956160/4638275f28c443fa80182e8367f534cf_1400x1400.webp?ts=1788956160",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109243_Exzentrischer_Wissenschaftler.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789230966971,
+      "name": "Unermüdlicher Kämpfer",
+      "brand": "Modbrix",
+      "image": "https://www.bluebrixx.com/thumbnail/e5/8b/5a/1784120176/40fd88aef93b45148a7f53762ea10fbb_400x400.webp?ts=1784120176",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109125_Unermuedlicher_Kaempfer.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231000249,
+      "name": "Felsentaube \"Oskar\"",
+      "brand": "BlueBrixx-Pro",
+      "image": "https://www.bluebrixx.com/thumbnail/aa/2b/4b/1781700085/2bea0c7fd03542b78cb26ad890684f29_1920x1920.webp?ts=1783950399",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109119_Felsentaube.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789231042884,
+      "name": "Außerirdischer Großwildjäger",
+      "brand": "Modbrix",
+      "image": "https://www.bluebrixx.com/thumbnail/a8/36/26/1788955858/16048d29c6944472977d8f8511db4e5b_1400x1400.webp?ts=1788955858",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109252_Ausserirdischer_Grosswildjaeger.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231074898,
+      "name": "Gelber Rettungshubschrauber",
+      "brand": "BlueBrixx-Special",
+      "image": "https://www.bluebrixx.com/thumbnail/7d/c5/9a/1786000862/21b9c164378247c0bc66b38b921ebef2_1400x1400.webp?ts=1786000862",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109383_Yellow_Rescue_Helicopter_V2.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231116388,
+      "name": "Oldtimer Traktor",
+      "brand": "BlueBrixx-Special",
+      "image": "https://www.bluebrixx.com/thumbnail/be/05/42/1780471080/c1973f4d8490481b94403d2e6b4cf906_1920x1920.webp?ts=1783950941",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109357_oldtimer_trecker.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231149912,
+      "name": "Ristorante mit Rollermobil",
+      "brand": "Modbrix",
+      "image": "https://www.bluebrixx.com/thumbnail/a4/25/g0/1780388493/75153c8b27dc4e09bb3d32821a94f7a0_1920x1920.webp?ts=1783950410",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109140_Ristorante_mit_Rollermobil.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789231185897,
+      "name": "Mauersegler",
+      "brand": "BlueBrixx-Pro",
+      "image": "https://www.bluebrixx.com/thumbnail/c0/d3/9e/1784529985/1b9866d06e524d2b963556ccb2d75f13_1400x1400.webp?ts=1784529986",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109628_Mauersegler.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231228911,
+      "name": "Hausrotschwanz",
+      "brand": "BlueBrixx-Pro",
+      "image": "https://www.bluebrixx.com/thumbnail/13/b6/94/1784286379/be87738eaeb74301be72f17950c484bf_1400x1400.webp?ts=1784286379",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109096_Hausrotschwanz.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231327720,
+      "name": "Burgkapelle",
+      "brand": "BlueBrixx-Special",
+      "image": "https://www.bluebrixx.com/thumbnail/ae/f1/28/1787838713/9357ebb3eb944b0da05d0178089a4578_1400x1400.webp?ts=1787838714",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109012%20mittelalterliche%20burgkapelle_1.3_bi.pdf",
+      "difficulty": "red"
+    },
+    {
+      "id": 1789231367617,
+      "name": "Burg Bärenfels: Tierkäfige und Gehege",
+      "brand": "BlueBrixx",
+      "image": "https://www.bluebrixx.com/thumbnail/a0/91/74/1788184296/dbc9bf10482e45e4b23adca99e97118a_400x400.webp?ts=1788184296",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/108/108801_Burg_Baerenfels_Tierkaefige_und_Gehege.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789231434422,
+      "name": "Die drei ???: 3D-Logo",
+      "brand": "BlueBrixx-Pro",
+      "image": "https://www.bluebrixx.com/thumbnail/29/42/c7/1782375085/8e0ce0fb92bb4f55983db3f84c363240_1920x1920.webp?ts=1783951282",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/109/109592_3D-Logo_mit_Visitenkarte.pdf",
+      "difficulty": "green"
+    },
+    {
+      "id": 1789231486960,
+      "name": "Skalar",
+      "brand": "BlueBrix",
+      "image": "https://www.bluebrixx.com/thumbnail/be/c2/e5/1780669864/3e2f1a960bc14b3181864ac5cc3cdd70_400x400.webp?ts=1783949816",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/108/108816_Skalar.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231518987,
+      "name": "RoboCop",
+      "brand": "BlueBrix",
+      "image": "https://www.bluebrixx.com/thumbnail/d2/fd/c0/1780669257/9a8ad5584ac2464893b8495068a42a1d_400x400.webp?ts=1783944713",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/106/106891_RoboCop.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231569095,
+      "name": "Cain / RoboCop 2.0",
+      "brand": "BlueBrix",
+      "image": "https://www.bluebrixx.com/thumbnail/b7/b9/f5/1780669263/e1c78cc4df8040dfbb109d63a996d149_400x400.webp?ts=1783944714",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/106/106894_Cain_RoboCop_2.0.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231598072,
+      "name": "ED-209",
+      "brand": "BlueBrix",
+      "image": "https://www.bluebrixx.com/thumbnail/16/fa/06/1780669268/fb30c9693f4e4b7c94197de11c8f8736_400x400.webp?ts=1783944713",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/106/106892_ED-209.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231629806,
+      "name": "OCP Police Cruiser",
+      "brand": "BlueBrix",
+      "image": "https://www.bluebrixx.com/thumbnail/e2/bd/7b/1780669265/883ed7c89b02487ab0d683f4522b860d_400x400.webp?ts=1783944715",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/106/106895_OCP_Police_Cruiser.pdf",
+      "difficulty": "yellow"
+    },
+    {
+      "id": 1789231653629,
+      "name": "Cains gepanzerter Transporter",
+      "brand": "BlueBrix",
+      "image": "https://www.bluebrixx.com/thumbnail/cb/c3/0b/1780669264/e1740adb2dc542028c3af31907fd4252_400x400.webp?ts=1783944715",
+      "pdf": "http://www.bluebrixx.com/data/files/manuals/106/106898_Cains_gepanzerter_Transporter.pdf",
+      "difficulty": "yellow"
+    }
+  ]
+}
