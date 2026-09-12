@@ -1,4 +1,4 @@
-const CACHE_NAME = 'klemmbausteinbude-v3';
+const CACHE_NAME = 'klemmbausteinbude-v4';
 const PRECACHE_URLS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', event => {
@@ -19,6 +19,11 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET') return;
+  
+  // Ignoriere externe Links und PDFs komplett
+  if (!event.request.url.startsWith(self.location.origin) || event.request.url.endsWith('.pdf')) {
+  return;
+}
 
   const url = new URL(request.url);
   // Fremde Ursprünge (z. B. externe PDF-Links) werden durchgereicht.
