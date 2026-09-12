@@ -46,7 +46,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:4px solid 
 .pdf-preview-content{display:flex;flex-direction:column;width:min(1180px,100%);height:min(92vh,900px);background:var(--white);border:5px solid var(--ink);border-radius:30px;box-shadow:10px 10px 0 var(--ink);overflow:hidden}
 .pdf-preview-header{display:flex;align-items:center;gap:15px;padding:16px 20px;border-bottom:4px solid var(--ink);background:linear-gradient(135deg,#fff8d9,#e8f5ff)}
 .pdf-preview-title{min-width:0;flex:1}.pdf-preview-title h2{overflow:hidden;margin:0 0 3px;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(1.25rem,3vw,2rem);letter-spacing:-.045em}.pdf-preview-meta{margin:0;color:var(--muted);font-size:.88rem;font-weight:850}.pdf-preview-header .difficulty-badge{margin:0;white-space:nowrap}.pdf-close{flex:none;width:43px;height:43px;border:4px solid var(--ink);border-radius:14px;background:var(--red);color:var(--ink);font-size:1.5rem;font-weight:950;line-height:1;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}.pdf-close:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
-.pdf-preview-body{position:relative;display:flex;flex:1;min-height:0;flex-direction:column;background:#eaf4ff}.pdf-frame{display:block;flex:1;width:100%;min-height:0;border:0;background:#fff}.pdf-fallback{display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:30px;text-align:center;color:var(--ink);font-weight:800;background:linear-gradient(135deg,#fff8d9,#e8f5ff)}.pdf-fallback.is-visible{display:flex}.pdf-fallback p{max-width:560px;margin:0;line-height:1.5}.pdf-direct-link{display:inline-block;padding:12px 18px;border:4px solid var(--ink);border-radius:14px;background:var(--yellow);color:var(--ink);font-weight:950;text-decoration:none;box-shadow:4px 4px 0 var(--ink)}.pdf-direct-link:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}.pdf-preview-footer{display:flex;justify-content:flex-end;padding:12px 18px;border-top:4px solid var(--ink);background:#fff}.pdf-open-new{padding:10px 15px;border:4px solid var(--ink);border-radius:14px;background:var(--blue);color:#fff;text-decoration:none;font-weight:950;box-shadow:4px 4px 0 var(--ink)}.pdf-open-new:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}.pdf-open-new[aria-disabled="true"],.pdf-direct-link[aria-disabled="true"]{pointer-events:none;opacity:.5}
+.pdf-preview-body{position:relative;display:flex;flex:1;min-height:0;flex-direction:column;background:#eaf4ff}.pdf-frame{display:block;flex:1;width:100%;min-height:0;border:0;background:#fff}.pdf-fallback{display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:30px;text-align:center;color:var(--ink);font-weight:800}.pdf-fallback.is-visible{display:flex}.pdf-fallback p{max-width:560px;margin:0;line-height:1.5}.pdf-direct-link{display:inline-block;padding:12px 18px;border:4px solid var(--ink);border-radius:14px;background:var(--yellow);color:var(--ink);font-weight:950;text-decoration:none;box-shadow:4px 4px 0 var(--ink)}.pdf-direct-link:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}.pdf-preview-footer{display:flex;justify-content:flex-end;padding:12px 18px;border-top:4px solid var(--ink);background:#fff}.pdf-open-new{padding:10px 15px;border:4px solid var(--ink);border-radius:14px;background:var(--blue);color:#fff;text-decoration:none;font-weight:950;box-shadow:4px 4px 0 var(--ink)}.pdf-open-new:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
 @keyframes fade-in{from{opacity:0}to{opacity:1}}@media(max-width:580px){.pdf-preview-modal{padding:0}.pdf-preview-content{width:100%;height:100%;border-width:4px;border-radius:18px;box-shadow:none}.pdf-preview-header{padding:12px 13px}.pdf-preview-header .difficulty-badge{font-size:.68rem;padding:4px 7px}.pdf-preview-footer{padding:10px}.pdf-open-new{width:100%;text-align:center}}
 
 /* Poster-Header: Noppenplatte, Pausenwolke und bunte Aktionsspur */
@@ -83,7 +83,7 @@ body{background:#d7a86e;background-image:radial-gradient(circle at 12% 18%,rgba(
 </main>
 <button class="admin-btn" onclick="toggleAdmin()" title="Admin-Bereich" aria-label="Admin-Bereich">🔒</button>
 <div id="setModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-content"><h2 id="modal-title">Neues Set hinzufügen</h2><label for="set-name">Name des Sets:</label><input type="text" id="set-name" placeholder="z.B. Polizei Station"><label for="set-brand">Hersteller:</label><input type="text" id="set-brand" placeholder="z.B. LEGO oder BlueBrixx"><label for="set-parts">Teileanzahl:</label><input type="number" id="set-parts" min="0" placeholder="z.B. 250"><label for="set-image">Bild URL (Link zum Bild):</label><input type="text" id="set-image" placeholder="https://..."><label for="set-pdf">PDF Anleitung URL (Link zur PDF):</label><input type="text" id="set-pdf" placeholder="https://..."><label for="set-difficulty">Schwierigkeitsgrad:</label><select id="set-difficulty"><option value="green">Leicht (Grün)</option><option value="yellow">Mittel (Gelb)</option><option value="red">Schwer (Rot)</option></select><div class="modal-buttons"><button class="btn-save" onclick="saveSet()">✓ Speichern</button><button class="btn-cancel" onclick="closeModal()">← Abbrechen</button></div></div></div>
-<div id="pdfPreviewModal" class="pdf-preview-modal" role="dialog" aria-modal="true" aria-labelledby="pdf-preview-title"><div class="pdf-preview-content"><header class="pdf-preview-header"><div class="pdf-preview-title"><h2 id="pdf-preview-title">Bauanleitung</h2><p class="pdf-preview-meta" id="pdf-preview-meta"></p></div><span class="difficulty-badge" id="pdf-preview-difficulty"></span><button type="button" class="pdf-close" id="pdfPreviewClose" onclick="closePdfPreview()" aria-label="Vorschau schließen" title="Schließen">×</button></header><div class="pdf-preview-body"><iframe class="pdf-frame" id="pdfPreviewFrame" title="PDF-Bauanleitung" referrerpolicy="no-referrer"></iframe><div class="pdf-fallback" id="pdfPreviewFallback"><p id="pdfPreviewMessage"></p><a class="pdf-direct-link" id="pdfFallbackLink" target="_blank" rel="noopener">PDF direkt öffnen</a></div></div><footer class="pdf-preview-footer"><a class="pdf-open-new" id="pdfOpenNew" target="_blank" rel="noopener">↗ In neuem Tab öffnen</a></footer></div></div>
+<div id="pdfPreviewModal" class="pdf-preview-modal" role="dialog" aria-modal="true" aria-labelledby="pdf-preview-title"><div class="pdf-preview-content"><header class="pdf-preview-header"><div class="pdf-preview-title"><h2 id="pdf-preview-title">Bauanleitung</h2><p class="pdf-preview-meta" id="pdf-preview-meta"></p></div><span class="difficulty-badge" id="pdf-preview-difficulty"></span><button type="button" class="pdf-close" id="pdfPreviewClose" onclick="closePdfPreview()" aria-label="Vorschau schließen" title="Schließen">×</button></header><div class="pdf-preview-body"><iframe class="pdf-frame" id="pdfPreviewFrame" title="PDF-Bauanleitung"></iframe><div class="pdf-fallback" id="pdfPreviewFallback"><p id="pdfPreviewMessage"></p><a class="pdf-direct-link" id="pdfFallbackLink" target="_blank" rel="noopener">PDF direkt öffnen</a></div></div><footer class="pdf-preview-footer"><a class="pdf-open-new" id="pdfOpenNew" target="_blank" rel="noopener">↗ PDF direkt öffnen</a></footer></div></div>
 <script>
 const ADMIN_PASSWORD = "admin"; let isAdmin = false; let editingSetId = null;
 let sets = JSON.parse(localStorage.getItem('klemmbausteinSets')) || [];
@@ -122,10 +122,7 @@ const pdfPreviewFallback = document.getElementById('pdfPreviewFallback');
 const pdfPreviewMessage = document.getElementById('pdfPreviewMessage');
 const pdfOpenNew = document.getElementById('pdfOpenNew');
 const pdfFallbackLink = document.getElementById('pdfFallbackLink');
-let pdfPreviewTimer = null;
 function difficultyLabel(difficulty){return difficulty==='green'?'★ Leicht':difficulty==='yellow'?'★★ Mittel':'★★★ Schwer'}
-function isHttpUrl(value){try{const url=new URL(value);return url.protocol==='http:'||url.protocol==='https:'}catch(error){return false}}
-function setPdfLink(link,url){if(isHttpUrl(url)){link.href=url;link.removeAttribute('aria-disabled')}else{link.removeAttribute('href');link.setAttribute('aria-disabled','true')}}
 function openPdfPreview(set){
   if(!set)return;
   const badge=difficultyLabel(set.difficulty);
@@ -133,21 +130,25 @@ function openPdfPreview(set){
   document.getElementById('pdf-preview-meta').textContent=set.brand||'Unbekannte Marke';
   document.getElementById('pdf-preview-difficulty').textContent=badge;
   const pdf=String(set.pdf||'').trim();
-  clearTimeout(pdfPreviewTimer); pdfPreviewFrame.src='about:blank'; pdfPreviewFallback.classList.remove('is-visible');
-  setPdfLink(pdfOpenNew,pdf); setPdfLink(pdfFallbackLink,pdf);
-  if(isHttpUrl(pdf)){
-    pdfPreviewFrame.src=`https://docs.google.com/gview?url=${encodeURIComponent(pdf)}&embedded=true`;
-    // A successful iframe load is not proof that the remote PDF was embeddable:
-    // Google Viewer can load an error page when the source sends X-Frame-Options/CSP.
-    // Keep a deterministic escape hatch instead of hiding the direct-open fallback.
-    pdfPreviewTimer=setTimeout(()=>{pdfPreviewMessage.textContent='Die Vorschau reagiert nicht zuverlässig. Das kann an X-Frame-Options/CSP oder einer Zugriffssperre der Quellseite liegen. Öffne die PDF direkt im Browser:';pdfPreviewFallback.classList.add('is-visible')},4500);
+  pdfPreviewFrame.src='about:blank';
+  pdfPreviewFallback.classList.remove('is-visible');
+  if(pdf){
+    // Use the browser's native PDF viewer. A cross-origin iframe cannot be
+    // inspected reliably, so never show an error merely because it is slow.
+    pdfOpenNew.href=pdf;
+    pdfFallbackLink.href=pdf;
+    pdfPreviewFrame.src=pdf;
   } else {
-    pdfPreviewMessage.textContent=pdf?'Der hinterlegte Link ist ungültig. Bitte im Admin-Modus einen HTTP- oder HTTPS-PDF-Link ergänzen.':'Für dieses Set ist noch keine PDF-Anleitung hinterlegt. Bitte im Admin-Modus einen PDF-Link ergänzen.';
+    pdfOpenNew.removeAttribute('href');
+    pdfFallbackLink.removeAttribute('href');
+    pdfPreviewMessage.textContent='Für dieses Set ist noch keine PDF-Anleitung hinterlegt. Bitte im Admin-Modus einen PDF-Link ergänzen.';
     pdfPreviewFallback.classList.add('is-visible');
   }
-  pdfPreviewModal.classList.add('is-open'); document.body.style.overflow='hidden'; document.getElementById('pdfPreviewClose').focus();
+  pdfPreviewModal.classList.add('is-open');
+  document.body.style.overflow='hidden';
+  document.getElementById('pdfPreviewClose').focus();
 }
-function closePdfPreview(){clearTimeout(pdfPreviewTimer);pdfPreviewModal.classList.remove('is-open');pdfPreviewFrame.src='about:blank';document.body.style.overflow='';}
+function closePdfPreview(){pdfPreviewModal.classList.remove('is-open');pdfPreviewFrame.src='about:blank';document.body.style.overflow='';}
 
 
 // Reine Hilfsfunktionen: Backups werden erst nach vollständiger Prüfung gespeichert.
