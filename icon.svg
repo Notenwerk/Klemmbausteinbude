@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1565C0"/><stop offset="1" stop-color="#0D47A1"/></linearGradient>
+  <linearGradient id="brickTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFE06A"/><stop offset=".48" stop-color="#FFC400"/><stop offset="1" stop-color="#F9A825"/></linearGradient>
+  <linearGradient id="brickFront" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFC928"/><stop offset="1" stop-color="#F4A900"/></linearGradient>
+  <linearGradient id="brickSide" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F9A825"/><stop offset="1" stop-color="#D88900"/></linearGradient>
+  <radialGradient id="stud" cx="34%" cy="25%"><stop stop-color="#FFF2A8"/><stop offset=".32" stop-color="#FFD633"/><stop offset="1" stop-color="#E39A00"/></radialGradient>
+  <pattern id="plate" width="48" height="48" patternUnits="userSpaceOnUse"><circle cx="12" cy="12" r="6.5" fill="#4D91DB" opacity=".25"/><circle cx="12" cy="12" r="5" fill="#0A3C8A" opacity=".16" transform="translate(1.5 2)"/></pattern>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="9"/><feOffset dy="9"/><feComponentTransfer><feFuncA type="linear" slope=".32"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="smallShadow"><feGaussianBlur stdDeviation="3"/><feOffset dy="3"/><feComponentTransfer><feFuncA type="linear" slope=".35"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- blue studded background -->
+<rect width="512" height="512" rx="54" fill="url(#bg)"/>
+<rect width="512" height="512" rx="54" fill="url(#plate)"/>
+<path d="M0 104H512M0 408H512" stroke="#70B0F0" opacity=".08" stroke-width="2"/>
+<!-- colorful accent bricks -->
+<g filter="url(#smallShadow)" stroke="#17366C" stroke-opacity=".22" stroke-width="2">
+ <rect x="93" y="137" width="27" height="27" rx="7" fill="#E53935" transform="rotate(-18 106 150)"/>
+ <circle cx="105" cy="140" r="5" fill="#F26A67" opacity=".7"/>
+ <rect x="385" y="151" width="29" height="29" rx="7" fill="#43A047" transform="rotate(20 399 165)"/>
+ <circle cx="394" cy="157" r="5" fill="#8BD18E" opacity=".75"/>
+ <rect x="79" y="350" width="28" height="28" rx="7" fill="#8E24AA" transform="rotate(19 93 364)"/>
+ <circle cx="88" cy="356" r="5" fill="#D875EA" opacity=".7"/>
+ <rect x="405" y="342" width="28" height="28" rx="7" fill="#FB8C00" transform="rotate(-17 419 356)"/>
+ <circle cx="414" cy="348" r="5" fill="#FFC066" opacity=".8"/>
+</g>
+<!-- main brick -->
+<g filter="url(#shadow)">
+ <!-- front face -->
+ <path d="M139 246 L378 246 L378 351 Q378 370 359 376 L158 376 Q139 370 139 351Z" fill="url(#brickFront)" stroke="#B87900" stroke-width="3"/>
+ <!-- right side -->
+ <path d="M378 246 L413 222 L413 323 Q413 340 397 349 L378 357Z" fill="url(#brickSide)" stroke="#B87900" stroke-width="3"/>
+ <!-- top face -->
+ <path d="M139 246 L174 216 L413 222 L378 246Z" fill="url(#brickTop)" stroke="#C18400" stroke-width="3"/>
+ <!-- soft face highlight -->
+ <path d="M153 268H365V286H153Z" fill="#FFE477" opacity=".28"/>
+ <!-- top edge gleam -->
+ <path d="M174 216L413 222L402 229L177 224Z" fill="#FFF1A4" opacity=".52"/>
+ <!-- studs -->
+ <g fill="url(#stud)" stroke="#C18400" stroke-width="2">
+  <ellipse cx="219" cy="226" rx="25" ry="13"/>
+  <ellipse cx="281" cy="228" rx="25" ry="13"/>
+  <ellipse cx="341" cy="229" rx="25" ry="13"/>
+  <ellipse cx="397" cy="230" rx="18" ry="11"/>
+ </g>
+ <g fill="#FFF6B8" opacity=".6"><ellipse cx="211" cy="222" rx="8" ry="3"/><ellipse cx="273" cy="224" rx="8" ry="3"/><ellipse cx="333" cy="225" rx="8" ry="3"/><ellipse cx="392" cy="227" rx="6" ry="2.5"/></g>
+</g>
+<!-- tiny floating dots -->
+<g fill="#FFF" opacity=".55"><circle cx="124" cy="207" r="4"/><circle cx="395" cy="292" r="4"/><circle cx="116" cy="313" r="3"/><circle cx="373" cy="126" r="3"/></g>
+</svg>

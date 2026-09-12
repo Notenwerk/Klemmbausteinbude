@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klemmbausteinbude – Bauanleitungen</title>
+<style>
+:root {
+  --red:#f04b4b; --red-dark:#cf303b; --yellow:#ffc928; --yellow-dark:#e3a914;
+  --blue:#3e8ff1; --blue-dark:#2470d0; --green:#45c878; --green-dark:#229b5a;
+  --ink:#24324a; --muted:#68758a; --cream:#fffaf0; --paper:#f7f9ff;
+  --white:#fff; --line:#e7ebf3; --shadow:0 10px 0 rgba(36,50,74,.10), 0 18px 34px rgba(74,91,130,.13);
+}
+*{box-sizing:border-box}
+html{min-width:320px;scroll-behavior:smooth}
+body{margin:0;min-height:100vh;padding:clamp(14px,3.5vw,46px);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}
+body::before,body::after{content:"";position:fixed;z-index:-1;border-radius:50%;pointer-events:none;filter:blur(1px)}
+body::before{width:420px;height:420px;left:-190px;top:180px;background:rgba(255,201,40,.20)}
+body::after{width:360px;height:360px;right:-140px;bottom:-70px;background:rgba(69,200,120,.15)}
+button,input,select{font:inherit}.page-shell{max-width:1220px;margin:auto}
+.site-header{position:relative;display:flex;align-items:center;justify-content:space-between;gap:32px;min-height:255px;padding:clamp(25px,5vw,58px);margin-bottom:28px;border:5px solid var(--ink);border-radius:38px;background:linear-gradient(135deg,#fff 0%,#fff8dc 100%);box-shadow:var(--shadow);overflow:hidden}
+.site-header::before{content:"";position:absolute;width:300px;height:300px;right:-90px;top:-145px;border:48px solid rgba(62,143,241,.16);border-radius:50%;transform:rotate(20deg)}
+.site-header::after{content:"";position:absolute;width:130px;height:130px;left:52%;bottom:-80px;border:25px solid rgba(240,75,75,.18);border-radius:50%}
+.header-copy{position:relative;z-index:1}.eyebrow{display:inline-block;margin:0 0 15px;padding:7px 12px;border-radius:99px;background:var(--yellow);border:3px solid var(--ink);font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;box-shadow:4px 4px 0 var(--ink)}
+h1{max-width:700px;margin:0;font-size:clamp(2.35rem,6vw,5.4rem);line-height:.93;letter-spacing:-.07em;font-weight:950}h1 .word-blue{color:var(--blue);text-shadow:3px 3px 0 var(--blue-dark)}
+.header-note{position:relative;z-index:1;max-width:280px;margin:0;font-size:1.05rem;line-height:1.45;font-weight:750}.header-note strong{color:var(--red-dark)}
+.logo-blocks{position:absolute;right:clamp(26px,7vw,100px);bottom:20px;width:185px;height:92px;transform:rotate(-7deg);z-index:2}.block{position:absolute;border:4px solid var(--ink);border-radius:9px;box-shadow:5px 5px 0 var(--ink)}.block::before,.block::after{content:"";position:absolute;top:-15px;width:18px;height:13px;border:4px solid var(--ink);border-bottom:0;border-radius:8px 8px 0 0;background:inherit}.block::before{left:17px}.block::after{right:17px}.block.red{left:8px;bottom:3px;width:90px;height:47px;background:var(--red)}.block.yellow{left:82px;bottom:3px;width:93px;height:47px;background:var(--yellow)}.block.blue{left:38px;bottom:43px;width:93px;height:47px;background:var(--blue)}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 2px 23px}.section-label{margin:0;font-size:1.55rem;font-weight:950;letter-spacing:-.04em}.section-label::before{content:"★";display:inline-grid;place-items:center;width:34px;height:34px;margin-right:10px;color:var(--ink);font-size:1rem;background:var(--yellow);border:3px solid var(--ink);border-radius:10px;transform:rotate(-7deg)}
+.add-set-btn{display:none;border:4px solid var(--ink);border-radius:16px;padding:12px 18px;cursor:pointer;color:var(--ink);background:var(--green);font-weight:950;box-shadow:5px 5px 0 var(--ink);transition:transform .16s,box-shadow .16s}.add-set-btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:4px solid var(--yellow);outline-offset:3px}.container{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,275px),1fr));gap:25px}
+.card{position:relative;overflow:hidden;cursor:pointer;background:var(--white);border:4px solid var(--ink);border-radius:26px;box-shadow:var(--shadow);animation:pop .45s both;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-7px) rotate(-1deg);box-shadow:0 14px 0 rgba(36,50,74,.12),0 24px 38px rgba(74,91,130,.18)}
+.card::before{content:"";display:block;height:19px;background:var(--blue);background-image:radial-gradient(circle at 14px 8px,#82b8ff 0 5px,transparent 6px),radial-gradient(circle at 44px 8px,#82b8ff 0 5px,transparent 6px);background-size:60px 18px;border-bottom:4px solid var(--ink)}.card.green::before{background-color:var(--green);background-image:radial-gradient(circle at 14px 8px,#8be2aa 0 5px,transparent 6px),radial-gradient(circle at 44px 8px,#8be2aa 0 5px,transparent 6px)}.card.yellow::before{background-color:var(--yellow);background-image:radial-gradient(circle at 14px 8px,#ffe684 0 5px,transparent 6px),radial-gradient(circle at 44px 8px,#ffe684 0 5px,transparent 6px)}.card.red::before{background-color:var(--red);background-image:radial-gradient(circle at 14px 8px,#ff8888 0 5px,transparent 6px),radial-gradient(circle at 44px 8px,#ff8888 0 5px,transparent 6px)}
+.card img{display:block;width:100%;height:205px;object-fit:cover;background:var(--cream);border-bottom:4px solid var(--ink)}.card-content{padding:18px 20px 22px}.card h2{margin:0 0 7px;font-size:1.25rem;line-height:1.15;letter-spacing:-.035em}.card p{margin:0;color:var(--muted);font-weight:800;font-size:.88rem}.difficulty-badge{display:inline-flex;align-items:center;gap:5px;margin-top:13px;padding:5px 10px;border:3px solid var(--ink);border-radius:99px;color:var(--ink);font-size:.76rem;font-weight:950;box-shadow:3px 3px 0 var(--ink)}.green .difficulty-badge{background:var(--green)}.yellow .difficulty-badge{background:var(--yellow)}.red .difficulty-badge{background:var(--red)}
+.edit-btn,.delete-btn{display:none;position:absolute;top:35px;z-index:3;width:36px;height:36px;border:3px solid var(--ink);border-radius:11px;color:var(--ink);cursor:pointer;font-weight:950;box-shadow:3px 3px 0 var(--ink)}.edit-btn{right:55px;background:var(--yellow)}.delete-btn{right:13px;background:var(--red)}.edit-btn:hover,.delete-btn:hover{transform:scale(1.08)}
+.admin-btn{position:fixed;right:24px;bottom:24px;z-index:20;width:60px;height:60px;border:4px solid var(--ink);border-radius:20px;color:var(--ink);background:var(--yellow);font-size:22px;cursor:pointer;box-shadow:5px 5px 0 var(--ink);transition:transform .16s}.admin-btn:hover{transform:translateY(-4px) rotate(5deg)}
+.modal{display:none;position:fixed;inset:0;z-index:1000;overflow-y:auto;padding:20px;background:rgba(36,50,74,.48);backdrop-filter:blur(5px)}.modal-content{width:min(100%,550px);margin:5vh auto;padding:clamp(24px,5vw,39px);background:var(--white);border:5px solid var(--ink);border-radius:30px;box-shadow:10px 10px 0 var(--ink)}.modal-content h2{margin:0 0 24px;font-size:2rem;letter-spacing:-.055em}.modal-content label{display:block;margin:15px 0 6px;font-size:.8rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em}.modal-content input,.modal-content select{width:100%;padding:13px 14px;border:3px solid var(--ink);border-radius:13px;color:var(--ink);background:#fbfcff;transition:box-shadow .18s}.modal-content input:focus,.modal-content select:focus{outline:0;box-shadow:4px 4px 0 var(--blue)}.modal-buttons{display:flex;gap:12px;margin-top:27px}.modal-buttons button{flex:1;padding:13px;border:4px solid var(--ink);border-radius:14px;color:var(--ink);font-weight:950;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .16s,box-shadow .16s}.modal-buttons button:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}.btn-save{background:var(--green)}.btn-cancel{background:#dce6f7}
+
+.backup-panel{display:none;margin:0 0 27px;padding:22px 24px;border:4px solid var(--ink);border-radius:24px;background:linear-gradient(135deg,#e8f5ff,#fff8d9);box-shadow:6px 6px 0 rgba(36,50,74,.16)}.backup-panel.visible{display:block;animation:pop .3s both}.backup-heading{margin:0 0 5px;font-size:1.3rem;font-weight:950}.backup-copy{margin:0 0 15px;color:var(--muted);font-size:.9rem;font-weight:700}.backup-actions{display:flex;flex-wrap:wrap;gap:12px}.backup-actions button{border:4px solid var(--ink);border-radius:14px;padding:11px 15px;color:var(--ink);font-weight:950;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .16s,box-shadow .16s}.backup-actions button:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}.backup-export{background:var(--blue);color:#fff!important}.backup-import{background:var(--yellow)}.backup-file{display:none}@media(max-width:580px){.backup-actions{flex-direction:column}.backup-actions button{width:100%}}
+.empty-state{grid-column:1/-1;padding:42px 20px;text-align:center;background:#fff;border:4px dashed var(--blue);border-radius:25px;font-size:1.1rem;font-weight:750;box-shadow:6px 6px 0 rgba(62,143,241,.2)}
+.sort-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:0 0 25px;padding:15px 18px;border:4px solid var(--ink);border-radius:22px;background:linear-gradient(135deg,#fff,#eaf4ff);box-shadow:6px 6px 0 rgba(36,50,74,.13)}.sort-toolbar label{font-weight:950}.sort-toolbar select,.sort-direction{border:3px solid var(--ink);border-radius:13px;padding:9px 12px;color:var(--ink);background:var(--yellow);font-weight:900;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}.sort-direction{min-width:52px;background:var(--blue);color:#fff;font-size:1.15rem;line-height:1}.sort-direction:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}@media(max-width:580px){.sort-toolbar{align-items:stretch;flex-direction:column}.sort-toolbar select,.sort-direction{width:100%}}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}@media(max-width:760px){.site-header{display:block;min-height:355px}.header-note{margin-top:24px}.logo-blocks{right:22px;bottom:20px;transform:scale(.82) rotate(-7deg);transform-origin:right bottom}}@media(max-width:580px){body{padding:12px}.site-header{border-radius:27px}.toolbar{align-items:flex-start;flex-direction:column}.add-set-btn{width:100%}.modal-buttons{flex-direction:column}.admin-btn{right:16px;bottom:16px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* PDF-Vorschau: gleiche Klemmbaustein-Optik, auf Mobil nahezu Vollbild */
+.pdf-preview-modal{display:none;position:fixed;inset:0;z-index:1200;padding:clamp(10px,3vw,34px);background:rgba(36,50,74,.62);backdrop-filter:blur(6px)}
+.pdf-preview-modal.is-open{display:flex;align-items:center;justify-content:center;animation:fade-in .2s both}
+.pdf-preview-content{display:flex;flex-direction:column;width:min(1180px,100%);height:min(92vh,900px);background:var(--white);border:5px solid var(--ink);border-radius:30px;box-shadow:10px 10px 0 var(--ink);overflow:hidden}
+.pdf-preview-header{display:flex;align-items:center;gap:15px;padding:16px 20px;border-bottom:4px solid var(--ink);background:linear-gradient(135deg,#fff8d9,#e8f5ff)}
+.pdf-preview-title{min-width:0;flex:1}.pdf-preview-title h2{overflow:hidden;margin:0 0 3px;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(1.25rem,3vw,2rem);letter-spacing:-.045em}.pdf-preview-meta{margin:0;color:var(--muted);font-size:.88rem;font-weight:850}.pdf-preview-header .difficulty-badge{margin:0;white-space:nowrap}.pdf-close{flex:none;width:43px;height:43px;border:4px solid var(--ink);border-radius:14px;background:var(--red);color:var(--ink);font-size:1.5rem;font-weight:950;line-height:1;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}.pdf-close:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.pdf-preview-body{position:relative;display:flex;flex:1;min-height:0;flex-direction:column;background:#eaf4ff}.pdf-frame{display:block;flex:1;width:100%;min-height:0;border:0;background:#fff}.pdf-fallback{display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:30px;text-align:center;color:var(--ink);font-weight:800}.pdf-fallback.is-visible{display:flex}.pdf-fallback p{max-width:560px;margin:0;line-height:1.5}.pdf-direct-link{display:inline-block;padding:12px 18px;border:4px solid var(--ink);border-radius:14px;background:var(--yellow);color:var(--ink);font-weight:950;text-decoration:none;box-shadow:4px 4px 0 var(--ink)}.pdf-direct-link:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}.pdf-preview-footer{display:flex;justify-content:flex-end;padding:12px 18px;border-top:4px solid var(--ink);background:#fff}.pdf-open-new{padding:10px 15px;border:4px solid var(--ink);border-radius:14px;background:var(--blue);color:#fff;text-decoration:none;font-weight:950;box-shadow:4px 4px 0 var(--ink)}.pdf-open-new:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}@media(max-width:580px){.pdf-preview-modal{padding:0}.pdf-preview-content{width:100%;height:100%;border-width:4px;border-radius:18px;box-shadow:none}.pdf-preview-header{padding:12px 13px}.pdf-preview-header .difficulty-badge{font-size:.68rem;padding:4px 7px}.pdf-preview-footer{padding:10px}.pdf-open-new{width:100%;text-align:center}}
+
+/* Poster-Header: Noppenplatte, Pausenwolke und bunte Aktionsspur */
+body{background:#d7a86e;background-image:radial-gradient(circle at 12% 18%,rgba(255,255,255,.18) 0 2px,transparent 3px),radial-gradient(circle at 80% 62%,rgba(105,57,24,.12) 0 2px,transparent 3px),repeating-linear-gradient(87deg,rgba(112,63,29,.045) 0 2px,transparent 2px 72px)}
+.poster-header{display:block;min-height:390px;padding:clamp(32px,5vw,58px);background:linear-gradient(145deg,#f3c882,#bd7b42);border-color:#56351f;box-shadow:0 11px 0 rgba(73,42,22,.28),0 22px 40px rgba(73,42,22,.22);overflow:visible}.stud-plate{border-top-left-radius:33px;border-top-right-radius:33px}
+.poster-header:before,.poster-header:after{display:none}.stud-plate{position:absolute;inset:0 0 auto;height:31px;padding:7px 5%;display:flex;justify-content:space-around;background:#1765b7;border-bottom:4px solid #123f76}.stud-plate i{width:22px;height:15px;border-radius:50%;background:#3d91e7;border:3px solid #123f76;box-shadow:inset 2px 2px 0 rgba(255,255,255,.3)}
+.poster-main{display:flex;align-items:center;justify-content:space-between;gap:28px;position:relative;z-index:2;margin-top:13px}.brand-plate{width:fit-content;padding:18px 24px 20px;background:#1765b7;border:5px solid #123f76;border-radius:18px;box-shadow:8px 8px 0 #123f76;transform:rotate(-2deg)}.brand-plate h1{max-width:none;font-size:clamp(2.15rem,6.7vw,5.25rem);line-height:.92;letter-spacing:-.075em;color:#fff;text-shadow:4px 4px 0 #123f76;white-space:nowrap}.brand-plate h1 span:nth-child(5n+1){color:#ffdc32}.brand-plate h1 span:nth-child(5n+2){color:#ef4d4d}.brand-plate h1 span:nth-child(5n+3){color:#58d483}.brand-plate h1 span:nth-child(5n+4){color:#ff9d38}.brand-plate h1 span:nth-child(5n+5){color:#fff}
+.bubble{position:relative;max-width:300px;padding:20px 23px;background:#1765b7;color:#fff;border:4px solid #f14e52;border-radius:48% 52% 45% 55%;font-weight:950;font-size:clamp(1rem,2vw,1.3rem);line-height:1.12;text-align:center;box-shadow:6px 6px 0 #123f76;transform:rotate(3deg)}.bubble:after{content:"";position:absolute;left:20%;bottom:-24px;border:13px solid transparent;border-top-color:#f14e52;transform:rotate(12deg)}.bubble span{display:block}.bubble strong{display:inline-block;margin-top:6px;color:#ffdc32;font-size:1.18em}
+.action-trail{display:flex;align-items:center;justify-content:center;gap:10px;margin:55px auto 0;position:relative;z-index:3}.action-badge{display:flex;align-items:center;gap:8px;padding:10px 16px;border:4px solid #56351f;border-radius:17px;color:#fff;box-shadow:5px 5px 0 #56351f;transform:rotate(-2deg);font-size:1.03rem}.action-badge svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}.action-badge.build{background:#2fa968}.action-badge.tinker{background:#8056bd;transform:rotate(2deg)}.action-badge.break{background:#f28b31;transform:rotate(-1deg)}.trail-dot{width:7px;height:7px;border-radius:50%;background:#56351f;box-shadow:0 0 0 2px #f3c882}
+@media(max-width:760px){.poster-header{min-height:500px}.poster-main{display:block}.brand-plate{margin:auto;padding:15px 13px}.brand-plate h1{font-size:clamp(1.65rem,9.2vw,3.7rem);text-align:center}.bubble{margin:30px auto 0}.action-trail{margin-top:48px;flex-wrap:wrap;gap:12px}.trail-dot{display:none}.action-badge{padding:9px 13px}}
+@media(max-width:420px){.poster-header{padding:30px 14px}.action-badge{flex:1;justify-content:center;min-width:112px}.brand-plate h1{letter-spacing:-.09em}}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1565C0">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Klemmbausteinbude">
+</head>
+<body>
+<main class="page-shell">
+<header class="site-header poster-header">
+  <div class="stud-plate" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="poster-main">
+    <div class="brand-plate" aria-label="Klemmbausteinbude"><h1><span>K</span><span>l</span><span>e</span><span>m</span><span>m</span><span>b</span><span>a</span><span>u</span><span>s</span><span>t</span><span>e</span><span>i</span><span>n</span><span>b</span><span>u</span><span>d</span><span>e</span></h1></div>
+    <div class="bubble"><span>Immer jede 1. und 2. Pause</span><strong>im Textilraum</strong></div>
+  </div>
+  <div class="action-trail" aria-label="Unser Pausenplan">
+    <div class="action-badge build"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16v9H4zM7 9V6h4v3m2 0V6h4v3M3 18h18"/></svg><b>Bauen</b></div>
+    <span class="trail-dot" aria-hidden="true"></span><span class="trail-dot" aria-hidden="true"></span><span class="trail-dot" aria-hidden="true"></span>
+    <div class="action-badge tinker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 3 1.3 2.1 2.4-.1.8 2.3-1.7 1.7.9 2.2-1.9 1.3-2-1.2-2 1.2-1.9-1.3.9-2.2-1.7-1.7.8-2.3 2.4.1L14.5 3ZM14 13l-6.5 6.5a1.8 1.8 0 0 0 2.5 2.5l6.5-6.5M6 18l3 3"/></svg><b>Tüfteln</b></div>
+    <span class="trail-dot" aria-hidden="true"></span><span class="trail-dot" aria-hidden="true"></span><span class="trail-dot" aria-hidden="true"></span>
+    <div class="action-badge break"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14M17 5v14"/></svg><b>Pause</b></div>
+  </div>
+</header>
+<div class="toolbar"><p class="section-label">Bauanleitungen</p><button id="addSetBtn" class="add-set-btn" onclick="openModal()">＋ Neues Set hinzufügen</button></div>
+<section class="backup-panel" id="backupPanel" aria-labelledby="backup-title"><h2 class="backup-heading" id="backup-title">🧰 Datensicherung</h2><p class="backup-copy">Sichere deine Sets als Datei oder hole sie später wieder zurück. Deine Daten liegen nur lokal in diesem Browser.</p><div class="backup-actions"><button type="button" class="backup-export" onclick="exportSets()">⬇ Sets exportieren / sichern</button><button type="button" class="backup-import" onclick="document.getElementById('backupFile').click()">⬆ Sets wiederherstellen / importieren</button><input class="backup-file" id="backupFile" type="file" accept=".json,application/json" onchange="importSets(event)"></div></section>
+<div class="sort-toolbar" aria-label="Sortierung der Bauanleitungen"><label for="sortBy">Sortieren nach:</label><select id="sortBy" aria-label="Sortierkriterium"><option value="name">Name (A–Z)</option><option value="brand">Hersteller/Marke (A–Z)</option><option value="difficulty">Schwierigkeitsgrad</option></select><button type="button" class="sort-direction" id="sortDirection" onclick="toggleSortDirection()" aria-label="Sortierreihenfolge umschalten" title="Aufsteigend/absteigend">↑</button></div>
+<section class="container" id="setsContainer" aria-label="Gespeicherte Bauanleitungen"></section>
+</main>
+<button class="admin-btn" onclick="toggleAdmin()" title="Admin-Bereich" aria-label="Admin-Bereich">🔒</button>
+<div id="setModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-content"><h2 id="modal-title">Neues Set hinzufügen</h2><label for="set-name">Name des Sets:</label><input type="text" id="set-name" placeholder="z.B. Polizei Station"><label for="set-brand">Hersteller:</label><input type="text" id="set-brand" placeholder="z.B. LEGO oder BlueBrixx"><label for="set-parts">Teileanzahl:</label><input type="number" id="set-parts" min="0" placeholder="z.B. 250"><label for="set-image">Bild URL (Link zum Bild):</label><input type="text" id="set-image" placeholder="https://..."><label for="set-pdf">PDF Anleitung URL (Link zur PDF):</label><input type="text" id="set-pdf" placeholder="https://..."><label for="set-difficulty">Schwierigkeitsgrad:</label><select id="set-difficulty"><option value="green">Leicht (Grün)</option><option value="yellow">Mittel (Gelb)</option><option value="red">Schwer (Rot)</option></select><div class="modal-buttons"><button class="btn-save" onclick="saveSet()">✓ Speichern</button><button class="btn-cancel" onclick="closeModal()">← Abbrechen</button></div></div></div>
+<div id="pdfPreviewModal" class="pdf-preview-modal" role="dialog" aria-modal="true" aria-labelledby="pdf-preview-title"><div class="pdf-preview-content"><header class="pdf-preview-header"><div class="pdf-preview-title"><h2 id="pdf-preview-title">Bauanleitung</h2><p class="pdf-preview-meta" id="pdf-preview-meta"></p></div><span class="difficulty-badge" id="pdf-preview-difficulty"></span><button type="button" class="pdf-close" id="pdfPreviewClose" onclick="closePdfPreview()" aria-label="Vorschau schließen" title="Schließen">×</button></header><div class="pdf-preview-body"><iframe class="pdf-frame" id="pdfPreviewFrame" title="PDF-Bauanleitung"></iframe><div class="pdf-fallback" id="pdfPreviewFallback"><p id="pdfPreviewMessage"></p><a class="pdf-direct-link" id="pdfFallbackLink" target="_blank" rel="noopener">PDF direkt öffnen</a></div></div><footer class="pdf-preview-footer"><a class="pdf-open-new" id="pdfOpenNew" target="_blank" rel="noopener">↗ In neuem Tab öffnen</a></footer></div></div>
+<script>
+const ADMIN_PASSWORD = "admin"; let isAdmin = false; let editingSetId = null;
+let sets = JSON.parse(localStorage.getItem('klemmbausteinSets')) || [];
+const container = document.getElementById('setsContainer'); const modal = document.getElementById('setModal'); const addSetBtn = document.getElementById('addSetBtn'); const backupPanel = document.getElementById('backupPanel');
+const sortBy = document.getElementById('sortBy'); const sortDirection = document.getElementById('sortDirection');
+const SORT_STORAGE_KEY = 'klemmbausteinSortierung'; const difficultyRank = {green:1, yellow:2, red:3};
+let sortSettings = JSON.parse(localStorage.getItem(SORT_STORAGE_KEY) || '{"key":"name","direction":"asc"}');
+if (!['name','brand','difficulty'].includes(sortSettings.key)) sortSettings.key = 'name';
+if (!['asc','desc'].includes(sortSettings.direction)) sortSettings.direction = 'asc';
+sortBy.value = sortSettings.key;
+function persistSortSettings(){localStorage.setItem(SORT_STORAGE_KEY, JSON.stringify(sortSettings));}
+function updateSortDirectionButton(){sortDirection.textContent = sortSettings.direction === 'asc' ? '↑' : '↓'; sortDirection.setAttribute('aria-label', sortSettings.direction === 'asc' ? 'Aufsteigend sortiert – absteigend wählen' : 'Absteigend sortiert – aufsteigend wählen');}
+function getSortedSets(){const sorted=sets.slice(); const multiplier=sortSettings.direction === 'asc' ? 1 : -1; sorted.sort((a,b)=>{if(sortSettings.key==='difficulty') return ((difficultyRank[a.difficulty]||0)-(difficultyRank[b.difficulty]||0))*multiplier; return String(a[sortSettings.key]||'').localeCompare(String(b[sortSettings.key]||''),'de',{sensitivity:'base'})*multiplier;}); return sorted;}
+function changeSort(){sortSettings.key=sortBy.value; persistSortSettings(); updateSortDirectionButton(); renderSets();}
+function toggleSortDirection(){sortSettings.direction=sortSettings.direction==='asc'?'desc':'asc'; persistSortSettings(); updateSortDirectionButton(); renderSets();}
+sortBy.addEventListener('change', changeSort); updateSortDirectionButton();
+const pdfPreviewModal = document.getElementById('pdfPreviewModal');
+const pdfPreviewFrame = document.getElementById('pdfPreviewFrame');
+const pdfPreviewFallback = document.getElementById('pdfPreviewFallback');
+const pdfPreviewMessage = document.getElementById('pdfPreviewMessage');
+const pdfOpenNew = document.getElementById('pdfOpenNew');
+const pdfFallbackLink = document.getElementById('pdfFallbackLink');
+let pdfPreviewTimer = null;
+pdfPreviewFrame.addEventListener('load',()=>{if(pdfPreviewFrame.src!=='about:blank'){clearTimeout(pdfPreviewTimer);pdfPreviewFallback.classList.remove('is-visible')}});
+function difficultyLabel(difficulty){return difficulty==='green'?'★ Leicht':difficulty==='yellow'?'★★ Mittel':'★★★ Schwer'}
+function openPdfPreview(set){
+  if(!set)return;
+  const badge=difficultyLabel(set.difficulty);
+  document.getElementById('pdf-preview-title').textContent=set.name||'Bauanleitung';
+  document.getElementById('pdf-preview-meta').textContent=set.brand||'Unbekannte Marke';
+  document.getElementById('pdf-preview-difficulty').textContent=badge;
+  const pdf=String(set.pdf||'').trim();
+  clearTimeout(pdfPreviewTimer); pdfPreviewFrame.src='about:blank'; pdfPreviewFallback.classList.remove('is-visible');
+  if(pdf){pdfOpenNew.href=pdf;pdfFallbackLink.href=pdf;pdfPreviewFrame.src=pdf;pdfPreviewTimer=setTimeout(()=>{pdfPreviewMessage.textContent='Die PDF-Vorschau konnte nicht geladen werden. Das kann an einer Website-Sperre (X-Frame-Options/CSP) liegen – öffne die Anleitung direkt:';pdfPreviewFallback.classList.add('is-visible')},3500)}
+  else {pdfOpenNew.removeAttribute('href');pdfFallbackLink.removeAttribute('href');pdfPreviewMessage.textContent='Für dieses Set ist noch keine PDF-Anleitung hinterlegt. Bitte im Admin-Modus einen PDF-Link ergänzen.';pdfPreviewFallback.classList.add('is-visible')}
+  pdfPreviewModal.classList.add('is-open'); document.body.style.overflow='hidden'; document.getElementById('pdfPreviewClose').focus();
+}
+function closePdfPreview(){clearTimeout(pdfPreviewTimer);pdfPreviewModal.classList.remove('is-open');pdfPreviewFrame.src='about:blank';document.body.style.overflow='';}
+
+
+// Reine Hilfsfunktionen: Backups werden erst nach vollständiger Prüfung gespeichert.
+function validateBackupPayload(payload){
+  const imported = Array.isArray(payload) ? payload : (payload && Array.isArray(payload.sets) ? payload.sets : null);
+  if(!imported || imported.length > 10000) return null;
+  const valid=imported.every(s=>s && (typeof s.id==='number'||typeof s.id==='string') && typeof s.name==='string' && typeof s.brand==='string' && (s.parts===undefined || Number.isFinite(Number(s.parts))) && typeof s.image==='string' && typeof s.pdf==='string' && ['green','yellow','red'].includes(s.difficulty));
+  return valid ? imported.map(s=>({id:s.id,name:s.name,brand:s.brand,parts:Math.max(0,Number(s.parts)||0),image:s.image,pdf:s.pdf,difficulty:s.difficulty})) : null;
+}
+function mergeBackupSets(current, imported){
+  const result=current.slice(); const keys=new Set(result.map(s=>String(s.id))); const names=new Set(result.map(s=>(s.name+'\u0000'+s.brand).trim().toLocaleLowerCase()));
+  imported.forEach(s=>{const nameKey=(s.name+'\u0000'+s.brand).trim().toLocaleLowerCase();if(!keys.has(String(s.id))&&!names.has(nameKey)){result.push(s);keys.add(String(s.id));names.add(nameKey)}});
+  return result;
+}
+function renderSets(){container.innerHTML='';if(sets.length===0){container.innerHTML='<p class="empty-state">Noch keine Bauanleitungen vorhanden. Bitte als Admin einloggen und Sets hinzufügen!</p>';return}getSortedSets().forEach(set=>{const card=document.createElement('div');card.className=`card ${set.difficulty}`;card.onclick=()=>openPdfPreview(set);const badge=set.difficulty==='green'?'★ Leicht':set.difficulty==='yellow'?'★★ Mittel':'★★★ Schwer';card.innerHTML=`<button class="edit-btn" onclick="openModal(${set.id}, event)" title="Set bearbeiten" aria-label="Set bearbeiten">✎</button><button class="delete-btn" onclick="deleteSet(event, ${set.id})" title="Set löschen" aria-label="Set löschen">×</button><img src="${set.image}" alt="${set.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22350%22 viewBox=%220 0 500 350%22%3E%3Crect width=%22500%22 height=%22350%22 fill=%22%23fff4c4%22/%3E%3Ctext x=%22250%22 y=%22180%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2226%22 font-weight=%22700%22 fill=%22%2324324a%22%3EKein Bild%3C/text%3E%3C/svg%3E'"><div class="card-content"><h2>${set.name}</h2><p>${set.brand}${set.parts ? ' · ' + set.parts + ' Teile' : ''}</p><span class="difficulty-badge">${badge}</span></div>`;container.appendChild(card)});updateAdminView()}
+function toggleAdmin(){if(isAdmin){isAdmin=false;alert("Admin-Modus deaktiviert.");updateAdminView()}else{const pass=prompt("Bitte Admin-Passwort eingeben:");if(pass===ADMIN_PASSWORD){isAdmin=true;alert("Erfolgreich eingeloggt!");updateAdminView()}else if(pass!==null){alert("Falsches Passwort!")}}}
+function updateAdminView(){addSetBtn.style.display=isAdmin?'block':'none';backupPanel.classList.toggle('visible',isAdmin);const actionBtns=document.querySelectorAll('.edit-btn, .delete-btn');actionBtns.forEach(btn=>{btn.style.display=isAdmin?'block':'none'})}
+function openModal(id=null,event=null){if(event)event.stopPropagation();editingSetId=id;const set=id===null?null:sets.find(s=>s.id===id);if(id!==null&&!set)return;document.getElementById('modal-title').textContent=set?'Set bearbeiten':'Neues Set hinzufügen';document.getElementById('set-name').value=set?set.name:'';document.getElementById('set-brand').value=set?set.brand:'';document.getElementById('set-parts').value=set&&set.parts!==undefined?set.parts:'';document.getElementById('set-image').value=set?set.image:'';document.getElementById('set-pdf').value=set?set.pdf:'';document.getElementById('set-difficulty').value=set?set.difficulty:'green';modal.style.display='block';document.getElementById('set-name').focus()}
+function closeModal(){modal.style.display='none';editingSetId=null;document.getElementById('modal-title').textContent='Neues Set hinzufügen';document.getElementById('set-name').value='';document.getElementById('set-brand').value='';document.getElementById('set-parts').value='';document.getElementById('set-image').value='';document.getElementById('set-pdf').value='';document.getElementById('set-difficulty').value='green'}
+function saveSet(){const name=document.getElementById('set-name').value;const brand=document.getElementById('set-brand').value;const parts=Math.max(0,parseInt(document.getElementById('set-parts').value,10)||0);const image=document.getElementById('set-image').value;const pdf=document.getElementById('set-pdf').value;const difficulty=document.getElementById('set-difficulty').value;if(!name||!brand||!image){alert("Bitte Name, Hersteller und Bild ausfüllen!");return}if(editingSetId!==null){const set=sets.find(s=>s.id===editingSetId);if(set){set.name=name;set.brand=brand;set.parts=parts;set.image=image;set.pdf=pdf;set.difficulty=difficulty}}else{sets.push({id:Date.now(),name:name,brand:brand,parts:parts,image:image,pdf:pdf,difficulty:difficulty})}localStorage.setItem('klemmbausteinSets',JSON.stringify(sets));renderSets();closeModal()}
+function deleteSet(event,id){event.stopPropagation();if(confirm("Möchtest du dieses Set wirklich löschen?")){sets=sets.filter(s=>s.id!==id);localStorage.setItem('klemmbausteinSets',JSON.stringify(sets));renderSets()}}
+function exportSets(){
+  const date=new Date().toISOString().slice(0,10); const payload={version:1,exportedAt:new Date().toISOString(),sets:sets};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}); const link=document.createElement('a'); link.href=URL.createObjectURL(blob); link.download=`klemmbausteinbude-backup-${date}.json`; link.click(); setTimeout(()=>URL.revokeObjectURL(link.href),0);
+}
+function importSets(event){
+  const file=event.target.files&&event.target.files[0]; if(!file)return;
+  const reader=new FileReader(); reader.onload=()=>{try{const imported=validateBackupPayload(JSON.parse(reader.result));if(!imported)throw new Error('invalid');const replace=confirm('Backup erkannt. OK = bestehende Sets ersetzen, Abbrechen = Sets zusammenführen.');sets=replace?imported:mergeBackupSets(sets,imported);localStorage.setItem('klemmbausteinSets',JSON.stringify(sets));renderSets();alert(replace?'Sets wurden wiederhergestellt.':'Sets wurden zusammengeführt.')}catch(error){alert('Diese Datei konnte nicht gelesen werden. Bitte wähle ein gültiges Klemmbausteinbude-Backup. Deine bisherigen Sets bleiben erhalten.')}finally{event.target.value=''}}; reader.onerror=()=>{event.target.value='';alert('Die Datei konnte nicht gelesen werden. Deine bisherigen Sets bleiben erhalten.')}; reader.readAsText(file);
+}
+window.onclick=function(event){if(event.target==modal)closeModal();if(event.target===pdfPreviewModal)closePdfPreview()};document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(pdfPreviewModal.classList.contains('is-open'))closePdfPreview();else if(modal.style.display==='block')closeModal()}});renderSets();
+</script>
+
+<script>
+  // Service Worker relativ registrieren, damit auch /reponame/ auf GitHub Pages funktioniert.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function (error) {
+        console.warn('Service Worker konnte nicht registriert werden:', error);
+      });
+    });
+  }
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
